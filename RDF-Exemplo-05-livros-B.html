@@ -3,14 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros Famosos com RDF Schema Embutido-B</title>
+    <title>Livros Famosos - B</title>
+    <!-- Link para o arquivo RDF -->
+    <link rel="alternate" type="application/rdf+xml" href="RDF-Exemplo-05-livrosB.rdf" title="Metadados RDF sobre os livros famosos">
+    <style>
+		* {
+			padding: 0;
+			margin: 0;
+			font-family: Arial, Tahoma, Ubuntu;
+		}
+		h1 {
+			text-align: center;
+		}
+		table {
+			width: 95%;
+			margin: 3px auto;
+			border: 1px solid #000000;
+			border-spacing: 0;
+			border-collapse: collapse;
+		}
+		table caption {
+			padding: 3px;
+			background-color: #0000FF;
+			color: #FFFFFF;
+			font-weight: bold;
+		}
+		table thead th {
+			background-color: #c0c0c0;
+			border: 1px solid #000000;
+		}
+		table thead th:first-child + th {
+			width: 400px;
+		}
+		table thead th:first-child + th + th {
+			width: 150px;
+		}
+		table tbody td {
+			border: 1px solid #000000;
+			padding: 0 2px;
+		}
+		table tbody td:first-child + td + td {
+			text-align: center;
+		}
+		p {
+			width: 95%;
+			margin: 3px auto;
+		}
+	</style>
 </head>
 <body>
 
-    <h1>Livros Famosos</h1>
+    <h1>Livros Famosos - B</h1>
 
     <!-- Tabela de livros famosos -->
-    <table border="1">
+    <table>
+		<caption>Livros</caption>
         <thead>
             <tr>
                 <th>Título</th>
@@ -19,59 +66,33 @@
             </tr>
         </thead>
         <tbody>
-            <tr vocab="http://www.exemplo.com/ontologia#" typeof="Livro">
-                <td property="dc:title">O Senhor dos Anéis</td>
-                <td property="escritoPor" resource="http://www.exemplo.com/autores#tolkien">J.R.R. Tolkien</td>
-                <td property="dc:date">1954</td>
+            <tr>
+                <td>O Senhor dos Anéis</td>
+                <td>J.R.R. Tolkien</td>
+                <td>1954</td>
             </tr>
-            <tr vocab="http://www.exemplo.com/ontologia#" typeof="Livro">
-                <td property="dc:title">Dom Quixote</td>
-                <td property="escritoPor" resource="http://www.exemplo.com/autores#cervantes">Miguel de Cervantes</td>
-                <td property="dc:date">1605</td>
+            <tr>
+                <td>Dom Quixote</td>
+                <td>Miguel de Cervantes</td>
+                <td>1605</td>
             </tr>
-            <tr vocab="http://www.exemplo.com/ontologia#" typeof="Livro">
-                <td property="dc:title">1984</td>
-                <td property="escritoPor" resource="http://www.exemplo.com/autores#orwell">George Orwell</td>
-                <td property="dc:date">1949</td>
+            <tr>
+                <td>1984</td>
+                <td>George Orwell</td>
+                <td>1949</td>
             </tr>
-            <tr vocab="http://www.exemplo.com/ontologia#" typeof="Livro">
-                <td property="dc:title">O Pequeno Príncipe</td>
-                <td property="escritoPor" resource="http://www.exemplo.com/autores#saint_exupery">Antoine de Saint-Exupéry</td>
-                <td property="dc:date">1943</td>
+            <tr>
+                <td>O Pequeno Príncipe</td>
+                <td>Antoine de Saint-Exupéry</td>
+                <td>1943</td>
             </tr>
         </tbody>
     </table>
 
-    <!-- Dados RDF embutidos usando RDFa -->
-    <div vocab="http://www.w3.org/2000/01/rdf-schema#" typeof="rdf:Class" resource="http://www.exemplo.com/ontologia#Livro">
-        <span property="rdfs:label">Livro</span>: Classe que representa um livro.
-    </div>
-    
-    <div vocab="http://www.w3.org/2000/01/rdf-schema#" typeof="rdf:Class" resource="http://www.exemplo.com/ontologia#Autor">
-        <span property="rdfs:label">Autor</span>: Classe que representa um autor de livros.
-    </div>
-
-    <div vocab="http://www.w3.org/2000/01/rdf-schema#" typeof="rdf:Property" resource="http://www.exemplo.com/ontologia#escritoPor">
-        <span property="rdfs:label">escritoPor</span>: Relaciona um livro ao seu autor.
-        <span property="rdfs:domain" resource="http://www.exemplo.com/ontologia#Livro">Domínio: Livro</span>,
-        <span property="rdfs:range" resource="http://www.exemplo.com/ontologia#Autor">Intervalo: Autor</span>.
-    </div>
-
-    <div typeof="Autor" resource="http://www.exemplo.com/autores#tolkien">
-        <span property="rdfs:label">J.R.R. Tolkien</span>
-    </div>
-
-    <div typeof="Autor" resource="http://www.exemplo.com/autores#cervantes">
-        <span property="rdfs:label">Miguel de Cervantes</span>
-    </div>
-
-    <div typeof="Autor" resource="http://www.exemplo.com/autores#orwell">
-        <span property="rdfs:label">George Orwell</span>
-    </div>
-
-    <div typeof="Autor" resource="http://www.exemplo.com/autores#saint_exupery">
-        <span property="rdfs:label">Antoine de Saint-Exupéry</span>
-    </div>
+    <p>
+        Para mais informações semânticas sobre os livros, acesse o <a href="RDF-Exemplo-05-livros.rdf">arquivo RDF</a>.
+    </p>
 
 </body>
 </html>
+
